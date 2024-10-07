@@ -66,7 +66,7 @@ def crear_reglas_difusas(reglas_json):
     return reglas_difusas
 
 # Cargar las reglas desde el archivo
-reglas_json = cargar_reglas('reglas_difusas.json')
+reglas_json = cargar_reglas('LogicaDifusa/reglas_difusas.json')
 
 # Crear el sistema de control difuso basado en las reglas cargadas
 reglas_difusas = crear_reglas_difusas(reglas_json)

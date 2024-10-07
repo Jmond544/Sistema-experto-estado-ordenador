@@ -1,0 +1,46 @@
+{
+    "rules": [
+        {
+            "if": {
+                "lentitud": "alta",
+                "uso_cpu": "alto"
+            },
+            "then": "malo"
+        },
+        {
+            "if": {
+                "reinicios": "frecuentes",
+                "temperatura": "caliente"
+            },
+            "then": "malo"
+        },
+        {
+            "if": {
+                "lentitud": "media",
+                "uso_cpu": "medio"
+            },
+            "then": "regular"
+        },
+        {
+            "if": {
+                "lentitud": "baja",
+                "uso_cpu": "bajo"
+            },
+            "then": "bueno"
+        },
+        {
+            "if": {
+                "temperatura": "fria",
+                "reinicios": "pocos"
+            },
+            "then": "bueno"
+        },
+        {
+            "if": {
+                "temperatura": "normal",
+                "reinicios": "moderados"
+            },
+            "then": "regular"
+        }
+    ]
+}

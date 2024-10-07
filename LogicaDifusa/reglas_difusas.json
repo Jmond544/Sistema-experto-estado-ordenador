@@ -5,42 +5,33 @@
                 "lentitud": "alta",
                 "uso_cpu": "alto"
             },
-            "then": "malo"
+            "then": "sobrecarga_procesos"
         },
         {
             "if": {
-                "lentitud": "media",
-                "uso_cpu": "medio"
+                "reinicios": "frecuentes",
+                "temperatura": "caliente"
             },
-            "then": "regular"
+            "then": "sobrecalentamiento"
         },
         {
             "if": {
-                "lentitud": "baja",
-                "uso_cpu": "bajo"
+                "conexion": "sin_conexion",
+                "otros_dispositivos": "con_conexion"
             },
-            "then": "bueno"
+            "then": "problema_red"
         },
         {
             "if": {
-                "temperatura": "caliente",
-                "reinicios": "frecuentes"
+                "pantallazo": "azul"
             },
-            "then": "malo"
+            "then": "error_hardware"
         },
         {
             "if": {
-                "temperatura": "normal",
-                "reinicios": "moderados"
+                "ruido_disco": "alto"
             },
-            "then": "regular"
-        },
-        {
-            "if": {
-                "temperatura": "fria",
-                "reinicios": "pocos"
-            },
-            "then": "bueno"
+            "then": "fallo_disco_duro"
         }
     ]
 }

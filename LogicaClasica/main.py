@@ -40,7 +40,7 @@ def obtener_sintomas():
     return sintomas
 
 # Cargar las reglas
-reglas = cargar_reglas('reglas.json')
+reglas = cargar_reglas("LogicaClasica/reglas.json")
 
 # Obtener síntomas del usuario
 sintomas_usuario = obtener_sintomas()
