@@ -100,4 +100,33 @@ Envío de un JSON a la API para obtener un diagnóstico:
 }
 ```
 
+- `Lentitud`: Puede ser "Baja", "Media" o "Alta".
+- `Temperatura`: Puede ser "Fría", "Normal" o "Caliente".
+- `Reinicios`: Puede ser "Pocos", "Moderados" o "Frecuentes".
+- `Uso de CPU`: Puede ser "Bajo", "Medio" o "Alto".
 
+## 2. Endpoints
+
+## 3. Ejecución del proyecto
+
+Sigue estos pasos para ejecutar el proyecto:
+
+a. Clona este repositorio en tu máquina local o descarga los archivos.
+    ```
+    git clone https://github.com/tu-usuario/tu-repositorio.git
+    ```
+
+b. Instala las dependencias necesarias ejecutando el siguiente comando:
+    ```
+    pip install numpy scikit-fuzzy
+    ```
+
+c. Ejecuta el archivo `main.py` con Python:
+    ```
+    python main.py
+    ```
+
+d. Dentro del archivo `main.py`, puedes modificar los valores de entrada de la función `diagnosticar_pc()` para realizar tu propio diagnóstico. Por ejemplo:
+    ```python
+    diagnosticar_pc(7, 75, 8, 80)
+    ```
