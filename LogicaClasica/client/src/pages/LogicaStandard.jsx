@@ -1,7 +1,7 @@
 import Switch from "../components/Switch";
 import { IoSend } from "react-icons/io5";
 import { useState } from "react";
-import { postQuery } from "../api/respuesta.api";
+import { postQueryClasica } from "../api/respuesta.api";
 
 const listaPreguntas = [
   { pregunta: "¿Tu ordenador está lento?", codigoAsociado: "lentitud" },
@@ -22,7 +22,7 @@ export default function LogicaStandard() {
   const [resultado, setResultado] = useState("");
 
   const handleEnviarRespuestas = async () => {
-    const response = await postQuery({ sintomas: respuestas });
+    const response = await postQueryClasica({ sintomas: respuestas });
     setResultado(response.diagnostico);
   };
 

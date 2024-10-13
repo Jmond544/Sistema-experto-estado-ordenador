@@ -1,4 +1,11 @@
 import json
+from pydantic import BaseModel
+
+class Sistema(BaseModel):
+    lentitud: str
+    uso_cpu: str
+    reinicios: str
+    temperatura: str
 
 # Cargar las reglas desde el archivo JSON
 def cargar_reglas(archivo):
@@ -8,6 +15,15 @@ def cargar_reglas(archivo):
 
 # Evaluar los síntomas contra las reglas
 def diagnostico_pc(sintomas, reglas):
+    for regla in reglas:
+        if all(sintoma in sintomas for sintoma in regla['if']):
+            return regla['then']
+    return "No se encontró un diagnóstico específico. Consulta a un especialista."
+
+# Evaluar los síntomas contra las reglas
+def diagnostico_pc_difusa(sistema:Sistema, reglas):
+    sintomas = [f"lentitud {sistema.lentitud}", f"uso de CPU {sistema.uso_cpu}", f"reinicios {sistema.reinicios}", f"temperatura {sistema.temperatura}"]
+    print(sintomas)
     for regla in reglas:
         if all(sintoma in sintomas for sintoma in regla['if']):
             return regla['then']

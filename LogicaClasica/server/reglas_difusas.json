@@ -1,0 +1,32 @@
+{
+    "rules": [
+        {
+            "if": ["temperatura caliente", "uso de CPU alto"],
+            "then": "Posible problema de ventilación. Verifica los ventiladores y asegúrate de que el sistema tenga suficiente refrigeración."
+        },
+        {
+            "if": ["lentitud alta", "temperatura normal"],
+            "then": "Posible problema con software. Revisa los programas que están consumiendo demasiados recursos."
+        },
+        {
+            "if": ["reinicios moderados", "temperatura fría"],
+            "then": "Posible fallo de hardware. Podría haber un componente defectuoso o un problema con la fuente de alimentación."
+        },
+        {
+            "if": ["uso de CPU medio", "lentitud baja"],
+            "then": "El sistema está funcionando correctamente, pero se recomienda una limpieza periódica de archivos temporales para mantener el rendimiento."
+        },
+        {
+            "if": ["reinicios frecuentes", "uso de CPU bajo", "temperatura fría"],
+            "then": "Podría haber un problema en la fuente de alimentación o la placa base. Revisa los componentes de hardware."
+        },
+        {
+            "if": ["lentitud media", "uso de CPU alto", "temperatura caliente"],
+            "then": "El sistema está bajo mucha presión. Revisa los procesos en ejecución y considera mejorar la refrigeración o aumentar la capacidad de hardware."
+        },
+        {
+            "if": ["reinicios pocos", "uso de CPU bajo", "temperatura normal"],
+            "then": "El sistema está operando en niveles óptimos. No se requieren acciones inmediatas."
+        }
+    ]
+}

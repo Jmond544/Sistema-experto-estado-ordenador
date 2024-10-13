@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from motor_inferencia import diagnostico_pc, cargar_reglas
+from motor_inferencia import diagnostico_pc, cargar_reglas, Sistema, diagnostico_pc_difusa
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -30,12 +30,22 @@ def read_root():
     return {"Hello": "World"}
 
 # Endpoint para recibir los síntomas y devolver el diagnóstico
-@app.post("/diagnostico")
+@app.post("/diagnostico-clasico")
 def obtener_diagnostico(sintomas: Sintomas):
     print(sintomas)
     reglas = cargar_reglas('reglas.json')
     resultado = diagnostico_pc(sintomas.sintomas, reglas)
     return {"diagnostico": resultado}
+
+@app.post("/diagnostico-difuso")
+def crear_sistema(sistema: Sistema):
+    reglas = cargar_reglas('reglas_difusas.json')
+    resultado = diagnostico_pc_difusa(sistema, reglas)
+    print(resultado)
+    return {
+        "mensaje": "Datos procesados correctamente",
+        "diagnostico": resultado
+    }
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str = None):
