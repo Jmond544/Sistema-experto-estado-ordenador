@@ -1,46 +1,25 @@
 {
     "rules": [
         {
-            "if": {
-                "lentitud": "alta",
-                "uso_cpu": "alto"
-            },
-            "then": "malo"
+            "if": ["lentitud alta", "uso de CPU alto"],
+            "then": "Posible sobrecarga de procesos. Revisa los procesos en segundo plano o aumenta la RAM."
         },
         {
-            "if": {
-                "lentitud": "media",
-                "uso_cpu": "medio"
-            },
-            "then": "regular"
+            "if": ["reinicios frecuentes", "temperatura caliente"],
+            "then": "Posible sobrecalentamiento. Limpia los ventiladores o revisa la pasta térmica."
         },
         {
-            "if": {
-                "lentitud": "baja",
-                "uso_cpu": "bajo"
-            },
-            "then": "bueno"
+            "if": ["lentitud media", "uso de CPU medio", "reinicios moderados"],
+            "then": "Revisa el rendimiento del sistema. Podría haber una falta de optimización o procesos innecesarios ejecutándose."
         },
         {
-            "if": {
-                "temperatura": "caliente",
-                "reinicios": "frecuentes"
-            },
-            "then": "malo"
+            "if": ["lentitud baja", "uso de CPU bajo"],
+            "then": "El rendimiento parece estar dentro de los niveles normales."
         },
         {
-            "if": {
-                "temperatura": "normal",
-                "reinicios": "moderados"
-            },
-            "then": "regular"
-        },
-        {
-            "if": {
-                "temperatura": "fria",
-                "reinicios": "pocos"
-            },
-            "then": "bueno"
+            "if": ["lentitud alta", "reinicios frecuentes"],
+            "then": "Podría haber un problema crítico en el sistema. Revisa el hardware y considera una restauración completa."
         }
     ]
 }
+
