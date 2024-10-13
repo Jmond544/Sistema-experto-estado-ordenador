@@ -38,14 +38,3 @@ def obtener_sintomas():
         sintomas.append('del disco duro')
 
     return sintomas
-
-# Cargar las reglas
-reglas = cargar_reglas('reglas.json')
-
-# Obtener síntomas del usuario
-sintomas_usuario = obtener_sintomas()
-
-# Realizar diagnóstico
-resultado = diagnostico_pc(sintomas_usuario, reglas)
-print("\nDiagnóstico: ", resultado)
-
