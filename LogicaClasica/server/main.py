@@ -3,7 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from motor_inferencia import diagnostico_pc, cargar_reglas, Sistema, diagnostico_pc_difusa
 from pydantic import BaseModel
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 app = FastAPI()
 
 class Sintomas(BaseModel):
@@ -14,6 +17,7 @@ origins = [
     "http://localhost",
     "http://localhost:8000",
     "http://localhost:5173",
+    os.getenv("FRONTEND_URL"),
     # Agrega aquí otros orígenes permitidos
 ]
 
@@ -51,5 +55,7 @@ def crear_sistema(sistema: Sistema):
 def read_item(item_id: int, q: str = None):
     return {"item_id": item_id, "q": q}
 
+port = int(os.getenv("PORT"))
+
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
+    uvicorn.run(app, host="127.0.0.1", port=port, log_level="info")
